@@ -7,12 +7,25 @@
 </head>
 
 <body>
-  Inspecting a DOM Node
+  <h1 id="h1Id">Inspecting a DOM Node</h1>
   <!--
   Inspect this button and try various colors for it: dark, light, red, orange, yellow, lime, green,
   teal, blue, blurple, magenta, pink!
   -->
-  <button>BUY NOW!</button>
+  <button id="myButton">BUY NOW!</button>
+<script>
+  const button = document.getElementById("myButton");
+  button.textContent = 'My button Text'
+  button.id = "newButtonId";
+  button.style.backgroundColor = 'yellow'
+  button.style.color = 'blue'
+  button.style.fontFamily = 'cambria'
+  const h1Tag = document.getElementById('h1Id');
+  h1Tag.style.color = 'red'
+  
+
+</script>
 </body>
+
 
 </html>
