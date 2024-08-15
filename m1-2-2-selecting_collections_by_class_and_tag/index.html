@@ -57,8 +57,8 @@
       /*
     PROBLEM 5 (DEBUGGING): There is a typo in the main header, h1 of our webpage. The code below was written in order to correct the typo. Fix the issue(s) with the code so it works as expected.
     */
-      let header = document.getElementsByTagName("h1");
-      header.textContent = "practice problems webpage";
+      let header = document.getElementsByTagName("h1")[0];
+      header.innerText = "practice problems webpage";
       console.log(header);
     </script>
   </body>
