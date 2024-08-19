@@ -10,37 +10,46 @@
     <p>Bonus points if you know the difference between <code>Node.textContent</code> and <code>HTMLElement.innerText</code></p>
     <p>You are encouraged to reference MDN as frequently as needed</p>
     <br>
-    <p>Good luck!</p>
+    <p id="good-luck-element">Good luck!</p>
     <p id="hidden-text" style="visibility: hidden;">Password: <span>myPassword</span></p>
   </section>
   <script>
     /*
     PROBLEM 1: Store the h1 text content in a variable "heading" then log heading on the console.
     */
-    //ENTER YOUR CODE HERE
+    let h1Heading = document.querySelector('h1')
+    let h1HeadingText = h1Heading.textContent
+    console.log(h1HeadingText)
+    
 
     /*
     PROBLEM 2: Update the variable created in problem 1 by appending an exclamation mark (!) to it. Set the h1 text content to the updated variable.
     */
-    //ENTER YOUR CODE HERE
+    h1HeadingText += '!'
+    console.log(h1HeadingText)
 
      /*
     PROBLEM 3: Create a variable "goodLuckElement" and store the p element containing the "Good luck!" text.
     Hint: Get a list of the p elements in section, go over list and compare textContent.
     */
-    //ENTER YOUR CODE HERE
+    let goodLuckElement = document.getElementById('good-luck-element')
+    console.log(goodLuckElement)
+    let goodLuckElementText = goodLuckElement.textContent
+    console.log(goodLuckElementText)
 
     /*
     PROBLEM 4: Change the text content of goodLuckElement to "Bonne Chance!"
     */
-    //ENTER YOUR CODE HERE
+    goodLuckElementText = "Bonne Chance!"
+    console.log(goodLuckElementText)
+
 
     /*
     PROBLEM 5 (DEBUGGING): The code below is an attempt at printing the password ("myPassword") to the console. Resolve the issue(s) with the code.
     */
-  //  const hiddenText = document.querySelector('#hidden-text');
-  //  const password = hiddenText.textContent
-  //  console.log(password)
+   const hiddenText = document.getElementById('hidden-text');
+   const password = hiddenText.textContent
+   console.log(password)
 
   </script>
 </body>
