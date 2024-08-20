@@ -8,7 +8,7 @@
     <h3>Getting started</h3>
     <p>This set of practice problems are focused on accessing relatives of HTML elements</p>
     <p>Prerequisite Topics/Concepts: </p>
-    <ul class="topics">
+    <ul id="about-the-solutions" class="topics">
       <li>Understanding the DOM</li>
       <li>Selecting elements </li>
       <li>Working with:
@@ -23,22 +23,29 @@
     /*
     PROBLEM 1: List the children elements of the "About the Solutions" section
     */
-    //ENTER YOUR CODE HERE
+    let parentElement = document.querySelector('#about-the-solutions')
+    console.log(parentElement.children)
+
 
     /*
     PROBLEM 2: Print the class name of the h4 tag's parent element
     */
-    //ENTER YOUR CODE HERE
+    h4Parent = document.querySelector('h1')
+    console.log(h4Parent.children)
+    console.log(h4Parent)
 
     /*
     PROBLEM 3: How many child elements does the unordered list with the class of "topics" have? Print count to the console
     */
-    //ENTER YOUR CODE HERE
+    console.log(parentElement.children)
+    
 
     /*
     PROBLEM 4: Print the class name of the great grand parent of the list item with an id of nodelist
     */
-    //ENTER YOUR CODE HERE
+    let nodelist1 = document.getElementById('nodelist')
+    console.log(nodelist.parentElement.parentElement)
+    
 
     /*
     PROBLEM 5 (DEBUGGING): The code below is an attempt at storing the prerequisite topics and subtopics in an array "topics".
