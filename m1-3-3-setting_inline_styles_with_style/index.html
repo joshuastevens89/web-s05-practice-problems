@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
 
-<body>
-  <h1>Setting Inline Styles With Style</h1>
-  <p>All your solutions for this set of practice problems will be written in the HTML.  Results should be visible in the web view.
+<body style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+  <h1 style="text-align : center; color : blue; background-color : dimgray">Setting Inline Styles With Style</h1>
+  <section style="margin : 50px; background-color : dimgray;">
+  <p style="margin-right : 90px; margin-left : 100px; color : white;"> All your solutions for this set of practice problems will be written in the HTML.  Results should be visible in the web view.
   </p>
+    </section>
+    <h2 style="color : red; background-color : black; text-align : center; margin : 35px;">Last Heading Element</h2>
+    <p>I had to add the last heading element and the last 'p' tag.</p>
   <script>
     /*
     PROBLEM 1: Add an inline style to the appropriate element to make all the content of the body to Verdana, or Geneva if Verdana is unavailabe, Tahoma if Verdana and Geneva aren't available, and finally sans-serif if the first three choices are not available.
     */
-    //ENTER YOUR CODE IN THE APPROPRIATE ELEMENT
+    let h1Text = document.querySelectorAll('body')
+    h1Text.forEach((element, idx) =>{
+      element.style.fontStyle = "Verdana, Geneva, Tahoma, sans-serif"
+      console.log(`The text from element`, idx, `in the nodelist has changed to`, h1Text.innerText)
+    })
+    
 
     /*
     PROBLEM 2: Add the appropriate inline style to the appropriate element to center the heading one text and make it blue.
@@ -28,6 +37,7 @@
     /*
     PROBLEM 5 (DEBUGGING): How could you test the effect of your font choices in the body element? What could you do to see the page in Geneva or Tahoma or sans-serif?
     */
+  //  change the order of the text selections
 
   </script>
 </body>
