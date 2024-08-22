@@ -11,22 +11,52 @@
     /*
     PROBLEM 1: Capture the cyan button in a variable, and set on onclick handler on it that logs to the console the text "Hello, world!". Test it out clicking the button on the page.
     */
-    //ENTER YOUR CODE HERE
+    let cyanBtn = document.getElementById('btn1')
+    cyanBtn.onclick = btnClick
+
+    function btnClick() {
+      console.log(`Hello World!`)
+    }
 
     /*
     PROBLEM 2: Capture the yellow button in a variable, and set on "onclick" handler on it that logs to the console the text content of the button. Use your DOM skills here, don't just hard code the string in the code! Test it out clicking the button on the page.
     */
-    //ENTER YOUR CODE HERE
+    let yellowBtn = document.getElementById('btn2')
+    yellowBtn.onclick = btnClick2
+
+    function btnClick2() {
+      console.log(yellowBtn.textContent)
+    }
 
     /*
     PROBLEM 3: Capture the grey button in a variable, and set an "onclick" handler on it that logs to the console the text "Ugh, you killed me!" and then unmounts the button from the DOM. Hint: DOM nodes have a remove method on them.
     */
-    //ENTER YOUR CODE HERE
+    let greyBtn = document.getElementById('btn3')
+    greyBtn.onclick = btnClick3
+
+    function btnClick3() {
+      console.log(`Ugh you killed the button!`)
+    }
 
     /*
     PROBLEM 4: Capture the input in a variable. Set (A) an "onfocus" handler on it that logs "Input focused!" to the console, (B) an "oninput" handler on it that logs "Input changed!" and (C) an "onblur" handler on it that logs "Input blurred". Interact with the input on the page to test it out!
     */
-    //ENTER YOUR CODE HERE
+    let inputId = document.getElementById('input1')
+    inputId.onfocus = onFocus
+    inputId.oninput = onInput
+    inputId.onblur = onBlur
+
+    function onFocus() {
+      console.log('Input Focused!')
+
+    }
+    function onInput() {
+      console.log(`Input changed`)
+
+    }
+    function onBlur() {
+      console.log(`Input Blurred`)
+    }
 
   </script>
 </body>
