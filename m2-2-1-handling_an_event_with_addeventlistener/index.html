@@ -15,34 +15,92 @@
     PROBLEM 1:
     Create a button that displays an alert message saying "Button clicked!" when the button is clicked. Append the button to the body.
     */
-    //ENTER YOUR CODE HERE
+    let newBtn = document.createElement('button')
+    newBtn.textContent = 'click me'
+    let bodyPage = document.querySelector('body')
+    
+    bodyPage.appendChild(newBtn)
+
+    function showAlert(event) {
+      alert('you clicked the button')
+      console.log(`${newBtn.textContent} clicked`)
+      
+
+
+    }
+    newBtn.addEventListener('click', showAlert)
+
+
+
 
     /*
     PROBLEM 2:
     Create a text input field and a button. When the button is clicked, retrieve the value entered in the input field and display it in the console using the addEventListener method. Append these new elements to the body.
     */
-    //ENTER YOUR CODE HERE
+     // Function to handle the button click event
+     function handleClick() {
+      const inputField = document.getElementById('inputField');
+      const inputValue = inputField.value;
+      console.log("Input value: " + inputValue);
+    }
+
+    // Create the input field element
+    const inputField = document.createElement('input');
+    inputField.type = 'text';
+    inputField.id = 'inputField';
+    inputField.placeholder = 'Enter text';
+
+    // Create the button element
+    const submitButton = document.createElement('button');
+    submitButton.id = 'submitButton';
+    submitButton.textContent = 'Submit';
+
+    // Add a click event listener to the button
+    submitButton.addEventListener('click', handleClick);
+
+    // Append the input field and button to the body
+    document.body.appendChild(inputField);
+    document.body.appendChild(submitButton);
+
 
     /*
     PROBLEM 3:
     Create an image with the source https://picsum.photos/id/237/200/300. When the image is clicked, change its source to the image https://picsum.photos/id/236/200/300 using the addEventListener method.
      */
-     //ENTER YOUR CODE HERE
+     let firstImage = document.createElement('img')
+     firstImage.id = 'first-image'
+     firstImage.src = "https://picsum.photos/id/237/200/300"
+     let secondImage = document.createElement('img')
+     secondImage.id = "second-image"
+     secondImage.src = "https://picsum.photos/id/236/200/300"
+
+     function handleClickImg() {
+      firstImage.src = "https://picsum.photos/id/236/200/300" 
+
+     }
+     
+     document.body.appendChild(firstImage)
+     firstImage.addEventListener("click", handleClickImg)
+     
+     
 
     /*
     PROBLEM 4 (DEBUGGING):
     // The code below needs to add the highlight class to the paragraph
     // element above, fix the code below so the webpage works correctly.
     */
-    /*
-    const paragraph = document.getElementById("myParagraph");
-    paragrapha.addEventListener("mouseover", function() {
-      paragraph.add("highlight");
+    let paragraph = document.createElement('p')
+    paragraph.id = "myParagraph"
+    paragraph.textContent = "This is my Paragraph"
+    document.body.appendChild(paragraph)
+    let paragraph1 = document.getElementById("myParagraph");
+    paragraph1.addEventListener("mouseover", function() {
+      paragraph1.style.backgroundColor = "yellow"
+      paragraph1.style.margin = 'flex'
     });
-    paragraph.addEventListener("mouseout", function() {
-      paragraph.classList.delete("highlight");
-    });
-    */
+   
+    
+  
 
   </script>
 </body>
