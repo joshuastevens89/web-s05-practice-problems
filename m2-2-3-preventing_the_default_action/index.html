@@ -3,36 +3,55 @@
 
 <body>
   <h1>Preventing the Default Action</h1>
-  <a href="https://bloomtech.com" target="_blank">Bloomtech Home Page</a>
+  <a href id="link-1" src="https://bloomtech.com" target="_blank">Bloomtech Home Page</a>
   <button>CLICK!</button>
   <script>
     /*
     PROBLEM 1: How would you prevent the user from copying text from the document?
     */
-    //ENTER YOUR CODE HERE
+    let bodySel = document.querySelector('body')
+    bodySel.addEventListener("keypress", (e) => e.preventDefault())
+    bodySel.addEventListener('contextmenu', (evt) => evt.preventDefault())
+    let handleCopy = (e) => {
+      event.preventDefault()
+
+    }
+    document.addEventListener("copy", handleCopy)
+    
+
     /*
     PROBLEM 2: How to go one step ahead and also prevent the user from cutting text?
     */
-    //ENTER YOUR CODE HERE
+    document.addEventListener('cut', (evt) => evt.preventDefault())
 
     /*
     PROBLEM 3: The link on the page redirects the user to bloomtech.com
     How would you change its behavior by adding a malicious code that sends the user to hacked.com ?
     */
-
-    //ENTER YOUR CODE HERE
+    let link = document.getElementById('link-1')
+   let hackClick = (event) => {
+    event.preventDefault();
+    window.open("https//hacked.com", "_blank" )
+   }
+    document.querySelector('a').addEventListener('click', hackClick)
 
     /*
     PROBLEM 4: How can you prevent the default behavior of a the page's link ONLY if it belongs to the class '.prevent' ?
     */
-
-    //ENTER YOUR CODE HERE
+    const hackLink2 = (event) => {
+      if (event.target.classList.contains("prevent")) {
+        event.preventDefault();
+        window.open("https://hacked.com", "_blank");
+      }
+    };
+    document.querySelector("a").removeEventListener("click", hackLink);
+    document.querySelector("a").addEventListener("click", hackLink2);
+  
 
     /*
     PROBLEM 5 (DEBUGGING):  The code below is not preventing the default action for the button. Why? Can you fix it?
     */
-    const handler1 = () => {
-      window.alert("Click!");
+   
     };
     const handler2 = (event) => {
       event.preventDefault();
