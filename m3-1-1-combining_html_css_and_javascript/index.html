@@ -11,26 +11,57 @@
     Create a button component with the class "custom-btn" that displays the text "Click Me".
     Append the button to the element with the class "custom-buttons".
     */
-    //ENTER YOUR CODE HERE
+    function createButton(text) {
+      const button = document.createElement('button')
+      button.className = "custom-btn"
+      button.textContent = text
+      return button 
+    }
+
+    const customButtonsDiv = document.querySelector('.custom-buttons')
+    const firstButton = createButton('Click Me')
+    customButtonsDiv.appendChild(firstButton)
 
     /*
     PROBLEM 2: Style the component
     Style the button component from Problem 1 with a background color of red, white text color, and a padding of 10px.
     */
-    //ENTER YOUR CODE HERE
+    const style = document.createElement('style')
+    style.textContent = ` 
+      .custom-btn {
+        background-color: red;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+
+      }
+     `   
+    document.head.appendChild(style);
+
+
 
     /*
     PROBLEM 3: Create multiple button components
     Use a loop to create five button components with the class "custom-btn" and display them inside the element with the class "custom-buttons".
     */
-    //ENTER YOUR CODE HERE
+    for (let i = 1; i <= 5; i++) {
+      const button = createButton(`CLICK ME${i}`)
+      customButtonsDiv.appendChild(button)
+    }
 
     /*
     PROBLEM 4: Make the buttons interactive
     Add a click event listener to each button component created in Problem 3.
     When a button is clicked, display an alert with the text "Button [button number] clicked!" (e.g., "Button 1 clicked!").
     */
-    //ENTER YOUR CODE HERE
+    const buttons = document.querySelectorAll('.custom-btn');
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+      alert(`Button ${index + 1}
+      clicked!`)
+    })
+    })
 
     /*
     PROBLEM 5 (DEBUGGING): Fix the button styles
